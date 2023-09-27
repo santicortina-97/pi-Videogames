@@ -1,21 +1,24 @@
 const axios = require("axios");
+const {Op} = require("sequelize")
+const {Videogame} = require("../db")
 const {API_KEY} = process.env
 /* console.log(API_KEY) */
 
 const getNameController = async (req, res) =>{
+            
+    const {name} = req.query;
     try {
-        const {name} = req.query;
-        const {data} = await axios(`https://api.rawg.io/api/games?search=${name}?api_key=${API_KEY}`)
+        const {data} = await axios(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
         if(data.results && data.results.length > 0){
-            const firstResult = data.results[0];
-            const videogame = {
-                id: firstResult.id,
-                name: firstResult.name,
-                description: firstResult.description
-            };
+            const first15Results = data.results.slice(0,16);
+            const videogame = first15Results.map(game =>({
+                id: game.id,
+                name: game.name,
+                description: game.description
+            }));
             return res.status(200).json(videogame)
         }else{
-            const dbVideogame = await findOne({where:{name}})
+            const dbVideogame = await Videogame.findAll()
             if(dbVideogame){
                 return res.status(200).json({
                     id: dbVideogame.id,
@@ -27,14 +30,9 @@ const getNameController = async (req, res) =>{
             }
         }
         
-/* 
-            await findOne({where:{name}})
-
-         */
     } catch (error) {
         return res.status(500).send(error.message)
     }
-
 }
 
 module.exports={getNameController}
