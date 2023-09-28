@@ -88,6 +88,7 @@ const getNameController = async (req, res) =>{
         const videogame = first15Results.map(game =>({
             id: game.id,
             name: game.name.toLowerCase(),
+            image: game.background_image,
             description: game.description,
             platform: game.platforms.map(platform => ({
                 name: platform.platform.name
