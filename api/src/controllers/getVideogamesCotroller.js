@@ -14,7 +14,16 @@ const getVideogamesController = async (req, res) =>{
                                 ...data.results.map((game)=>({
                                 id: game.id,
                                 name: game.name,
-                                description: game.description
+                                description: game.description,
+                                genres: game.genres.map(genre => ({
+                                    name: genre.name
+                                })),
+                                platform: game.platforms.map(platform => ({
+                                    name: platform.platform.name
+                                })),
+                                image: game.background_image ,
+                                released: game.released ,
+                                rating: game.rating ,
                             }))
                             );
                         };
