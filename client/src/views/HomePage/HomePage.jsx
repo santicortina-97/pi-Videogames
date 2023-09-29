@@ -20,9 +20,12 @@ const HomePage = () => {
 
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(getByName(search))
+        if(search){
+            dispatch(getByName(search))
+        }else{
+            alert("No hay Viseojuegos")
+        }
     }
-
     useEffect(() =>{
         dispatch(getGames())
     },[])

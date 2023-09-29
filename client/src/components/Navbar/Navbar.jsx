@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Navbar = ({handleChange,handleSubmit}) => {
+
   return (
     <div>
       <form onChange={handleChange}>

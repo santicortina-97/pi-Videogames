@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const GET_GAMES = "GET_GAMES"
 export const GET_BY_NAME = "GET_BY_NAME"
-export const GET_BY_ID = "GET_BY_ID"
+export const GET_DETAIL = "GET_DETAIL"
 
 export function getGames(){
     return async function(dispatch){
@@ -25,12 +25,12 @@ export function getByName(name){
     }
 }
 
-export function getById(id){
+export function getDetail(id){
     return async function(dispatch){
         let response = await axios(`http://localhost:3001/videogames/${id}`)
-/*         console.log(response.data) */
+        /* console.log(response.data) */
         return dispatch({
-            type:"GET_BY_ID",
+            type:"GET_DETAIL",
             payload:response.data
         })
     }
