@@ -24,7 +24,7 @@ const Detail = () => {
       <img src={detailgame.image} alt="" />
       <h2>Name: {detailgame.name}</h2>
       <p>{description}</p>
-      <p>{detailgame.platform?.map((plataf) => plataf.name)}</p>
+{/*       <p>{detailgame.platform?.map((plataf) => plataf.name)}</p> */}
 {/*       <p>{detailgame.platform}</p> */}
       <p>{detailgame.genres?.map((genre) => genre.name)}</p>
     </div>

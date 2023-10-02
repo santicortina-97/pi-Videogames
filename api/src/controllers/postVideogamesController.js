@@ -35,12 +35,12 @@ const postVideogamesController = async (req, res) =>{
             genres //Asociamos los generos
         })
         //Buscamos en el juego
-        for(let i= 0; i< genres.length; i++){
-            const genre = await Genres.findOne({where:{name: genres[i]}})
-            if(genre){
-                await newGame.addGenres(genre.id)
+            for(let i= 0; i< genres?.length; i++){
+                const genre = await Genres.findOne({where:{name: genres[i]}})
+                if(genre){
+                    await newGame.addGenres(genre.id)
+                }
             }
-        }
         // Buscamos el juego creado con sus géneros asociados
         const returnGame = await Videogame.findOne({
             where:{id: newGame.id},
