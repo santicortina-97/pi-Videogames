@@ -7,7 +7,7 @@ const getPlatformsController = async (req, res) =>{
         let page = 1;
         const platforms= [];
         
-        while(page <= 5) {
+        while(page <= 3) {
             const response = await axios(`https://api.rawg.io/api/games?key=${API_KEY}&page=${page}`);
             const games = response.data.results;
 

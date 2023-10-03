@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* .container svg{
+    color: rgb(173, 175, 173);
+    background-color: #09440A;
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 55px 5px rgba(2,45,222,1);
+    transform: translateY(250px);
+} */
+
+.button {
+    color: black;
+    background-color: #95F500;
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 55px 5px rgba(149,245,0,1);
+/*     box-shadow: 0px 0px 55px 5px rgba(2,45,222,1); */
+    transform: translateY(250px);
+}
+
+.button:hover{
+    box-shadow: 0px 0px 55px 5px rgba(149,245,0,1);
+}

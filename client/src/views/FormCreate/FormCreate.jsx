@@ -5,6 +5,7 @@ import { postGame, getGenres, getPlatforms } from '../../redux/actions'
 
 const FormCreate = () => {
     const dispatch = useDispatch();
+
     let genres = useSelector((state) => state.genres)
     let platforms = useSelector((state) => state.platforms)
 
@@ -12,28 +13,30 @@ const FormCreate = () => {
         dispatch(getGenres())
         dispatch(getPlatforms())
     },[])
-    console.log(platforms)
+/*     console.log(platforms) */
     
-    
+
     const [game, setGame] = useState({
         name: "",
         description: "",
         image: "",
         releaseDate: "",
         rating: "",
-        platform: [],
+        platform: '',
         genres:[],
     })
 
-    const handleChange = (e) => {
-        if (e.target.name === "genres" || e.target.name === "platform") {
-            /* setGame({ ...game, [e.target.name]: [...game.genres, e.target.value] }); */
-            setGame({ ...game, [e.target.name]: [e.target.value] });
-            } else {
-            setGame({ ...game, [e.target.name]: e.target.value });
-            }
-        };
-        
+        const handleChange = (e) => {
+        const {name, value } = e.target;
+
+        if(name === 'genres' || name === 'platform'){
+            setGame((prevGame)=> ({
+                ...prevGame,
+                [name]: [...prevGame[name],value],
+            }));
+        }else{
+            setGame({...game, [name]:value})
+        }}
     
     const handleSubmit = (e) =>{
         e.preventDefault(),
@@ -50,42 +53,48 @@ const FormCreate = () => {
                 <label htmlFor="">Image:</label>
                 <input type="text" name='image' value={game.image} onChange={handleChange}/>
 {/*                 //!Platform */}
-                <label htmlFor="">Generes:</label>
-                <select name="genres" value={game.platform} id="" onChange={handleChange}>
-                <option value="" disabled>
+                <label htmlFor="">Platforms:</label>
+                <select name="platform"  /* value={game.platform} */ id="" onChange={handleChange}>
+                <option value="" disabled selected>
                     Platforms
                 </option>
                 {platforms.platforms?.map((platform) =>(
-                    <option>{platform}</option>
+                    <option key={platform.id} value={platform.name}>{platform}</option>
                 ))}
                 </select>
-{/*                 {platforms.platforms?.map((platform) =>(
-                    <option>{platform}</option>
-                ))} */}
 {/*                 //!Description */}
                 <label htmlFor="">Description:</label>
                 <input type="text" name='description' value={game.description} onChange={handleChange}/>
 {/*                 //!Release Date */}
                 <label htmlFor="">Release Date:</label>
-                <input type="date" name='releaseDate' value={game.releaseDate} onChange={handleChange}/>
+                <input type="text" name='releaseDate' value={game.releaseDate} onChange={handleChange}/>
 {/*                 //!Rating */}
                 <label htmlFor="">Rating:</label>
                 <input type="text" name='rating' value={game.rating} onChange={handleChange}/>
 {/*                 //!genres */}
-                <label htmlFor="">Generes:</label>
-                <select name="genres" value={game.genres} id="" onChange={handleChange}>
-                <option value="" disabled>
-                    Genres
-                </option>
-                {genres.genresData?.map((genre) => (
-                <option key={genre.id} value={genre.name}>{genre.name}</option>
-                ))}
+                <label htmlFor="genres">Genres:</label>
+
+                <select name="genres"  /* value={game.genres} */ id="" onChange={handleChange}>
+                    <option value="" disabled selected>
+                        Genres
+                    </option>
+                    {genres.genresData?.map((genre) => (
+                    
+                    <option key={genre.id} >
+                        {genre.name}
+                    </option>
+                    ))}
                 </select>
+
                 <button type='submit'>Crear</button>
             </form>
             <div>
                 {game.genres.map((genreSelect) =>(
-                    <li>{genreSelect}</li>
+                    <div >
+                        <div style={{display: 'flex', justifyContent:'center'}}>
+                        <li>{genreSelect}</li>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
@@ -93,3 +102,32 @@ const FormCreate = () => {
 }
 
 export default FormCreate
+
+
+
+/* const FormCreate = () => {
+    return (
+            <div>
+                <form action="">
+                    <label htmlFor="">Name:</label>
+                    <input type="text" />
+                    <label htmlFor="">Description:</label>
+                    <input type="text" />
+                    <label htmlFor="">Platform:</label>
+                    <input type="text" />
+                    <label htmlFor="">Image:</label>
+                    <input type="text" />
+                    <label htmlFor="">ReleaseDate:</label>
+                    <input type="text" />
+                    <label htmlFor="">Rating:</label>
+                    <input type="text" />
+                    <label htmlFor="">Genres:</label>
+                    <input type="text" />
+                    <button>Crear</button>
+                </form>
+            </div>
+    )
+}
+
+export default FormCreate
+ */
