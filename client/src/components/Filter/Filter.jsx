@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { order, filterGenre, getGenres} from '../../redux/actions'
 import Cards from '../Cards/Cards'
+import style from "./Filter.module.css"
 
 
 const Filter = () => {
@@ -15,7 +16,7 @@ const Filter = () => {
         dispatch(getGenres())
     },[])
 
-console.log(filtered)
+/* console.log(filtered) */
     const [aux, setAux] = useState(false)
     const [ascendentRatingCheckbox, setAscendentRatingCheckbox] = useState(false)
     const [descendentRatingCheckbox, setDescendentRatingCheckbox] = useState(false)
@@ -43,33 +44,58 @@ console.log(filtered)
 
 
     return (
-        <div>
+        <div className={style.container}>
             <div>
-                <h2>Order Rating</h2>
-                <input type="checkbox" value="ascendentRating" onChange={handleOrder} checked={ascendentRatingCheckbox}/><label htmlFor="">Ascendente</label>
-                <input type="checkbox" value="descendentRating" onChange={handleOrder} checked={descendentRatingCheckbox}/><label htmlFor="">Descendente</label>
             </div>
-            <div>
-                <h2>Order Name</h2>
-                <input type="checkbox" value="ascendentName" onChange={handleOrder} checked={ascendentNameCheckbox}/><label htmlFor="">ascendentName</label>
-                <input type="checkbox" value="descendentName" onChange={handleOrder} checked={descendentNameCheckbox}/><label htmlFor="">descendentName</label>
-            </div>
-            <div>
-                <h2>Filter genre</h2>
-                <input type="checkbox" value="All" name='genres' onChange={handleFilter}/><label htmlFor="">All</label>
-            {genres.genresData?.map((genre) => (
-                <div key={genre.id}>
-                    <input
-                        type="checkbox"
-                        value={genre.name}
-                        name='genres'
-                        onChange={handleFilter}
-                    />
-                    <label>{genre.name}</label>
+            <div className={style.filterContainer}>
+                <div>
+                    <input type="checkbox" />
+                    <label htmlFor="">My Games</label>
                 </div>
-            ))}
+                <div className={style.rating}>
+                    <h3 className={style.title}>Order Rating</h3>
+                    <div style={{display:"flex", flexDirection:"column"}}>
+                        <div>
+                            <input type="checkbox" value="ascendentRating" onChange={handleOrder} checked={ascendentRatingCheckbox}/>
+                            <label htmlFor="">Ascendent</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="descendentRating" onChange={handleOrder} checked={descendentRatingCheckbox}/>
+                            <label htmlFor="">Descendent</label>
+                        </div>
+                    </div>
+                </div>
+                <div className={style.name}>
+                    <h3 className={style.title}>Order Name</h3>
+                    <div>
+                        <input type="checkbox" value="ascendentName" onChange={handleOrder} checked={ascendentNameCheckbox}/>
+                        <label htmlFor="">Ascendent</label>                        
+                    </div>
+                    <div>
+                        <input type="checkbox" value="descendentName" onChange={handleOrder} checked={descendentNameCheckbox}/>
+                        <label htmlFor="">Descendent</label>
+                    </div>
+                </div>
+                <div className={style.genre}>
+                    <h3 className={style.title}>Filter genre</h3>
+                    <div>
+                        <input type="checkbox" value="All" name='genres' onChange={handleFilter}/>
+                        <label htmlFor="">All</label>
+                    </div>
+                {genres.genresData?.map((genre) => (
+                    <div key={genre.id}>
+                        <input
+                            type="checkbox"
+                            value={genre.name}
+                            name='genres'
+                            onChange={handleFilter}
+                        />
+                        <label>{genre.name}</label>
+                    </div>
+                ))}
+                </div>
             </div>
-            <Cards allGame={orden} filterGenre={filtered} />
+            <Cards allGame={orden} filterGenre={filtered}/>
         </div>
     )
 }

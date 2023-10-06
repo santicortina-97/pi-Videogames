@@ -9,7 +9,6 @@ import FormCreate from './views/FormCreate/FormCreate';
 function App() {
   return (
     <div className="App">
-      <h1>Henry Videogames</h1>
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/home' element={<HomePage/>}/>

@@ -14,7 +14,7 @@ const FormCreate = () => {
         dispatch(getGenres())
         dispatch(getPlatforms())
     },[])
-/*     console.log(genres) */
+    console.log(platforms)
     const [game, setGame] = useState({
             name: "",
             description: "",
@@ -85,7 +85,7 @@ const FormCreate = () => {
                 dispatch(postGame(game))
             }
         }
-/*         console.log(game) */
+
     return (
     <div>
         <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"200px", marginLeft:"45%"}}>

@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.filterContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 90%;
+    position: sticky;
+    top: 20px;
+    padding: 30px;
+}
+
+.rating{
+    border-bottom: 2px dotted black;
+/*     padding-bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.name{
+    border-bottom: 2px dotted black;
+/*     padding-bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.genre{
+/*     padding-bottom: 30px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: x-large;
+}
+.container
+input,
+label{
+    margin-bottom: 15px;
+    padding: 10px;
+}

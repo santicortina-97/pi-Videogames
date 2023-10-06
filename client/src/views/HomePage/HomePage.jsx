@@ -36,7 +36,6 @@ const HomePage = () => {
         <div>
             <Navbar handleChange={handleChange} handleSubmit={handleSubmit}/>
             <Filter/>
-            <h2>Home</h2>
 {/*             <Cards allGame={allGame}/> */}
         </div>
     )

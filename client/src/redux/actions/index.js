@@ -8,7 +8,7 @@ export const GET_GENRES = "GET_GENRES"
 export const GET_PLATFORMS = "GET_PLATFORMS"
 //Filtos
 export const FILTER_GENRE = "FILTER_GENRE"
-export const FILTER_API = "FILTER_API"
+export const FILTER_DB = "FILTER_DB"
 export const ORDER = "ORDER"
 
 
@@ -110,10 +110,10 @@ export function filterGenre(genres){
 
 
 
-/* FILTER_API
+/* FILTER_DB
 export function filterApi(){
     return{
-        type: FILTER_API,
+        type: FILTER_DB,
         payload: 
     }
 } */

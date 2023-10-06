@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
+import style from "./Cards.module.css"
 
 const Cards = ({allGame}) => {
   const gamesList = allGame
@@ -7,7 +8,7 @@ const Cards = ({allGame}) => {
   /* const gamesList = Array.isArray(allGame.results) ? allGame.results : []; */
 
   return (
-    <div>
+    <div className={style.container}>
       {gamesList.map((game) =><Card game={game}/>)}
     </div>
   )

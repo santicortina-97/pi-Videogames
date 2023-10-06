@@ -18,15 +18,16 @@
 .button {
     color: black;
     background-color: #95F500;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     border: none;
     border-radius: 50%;
     box-shadow: inset 0px 0px 55px 5px rgba(149,245,0,1);
 /*     box-shadow: 0px 0px 55px 5px rgba(2,45,222,1); */
-    transform: translateY(250px);
+    transform: translateY(350px);
 }
 
 .button:hover{
-    box-shadow: 0px 0px 55px 5px rgba(149,245,0,1);
+/*     transition: all 2s ease-out; */
+    box-shadow: 0px 0px 50px 1px rgba(149,245,0,1);
 }
