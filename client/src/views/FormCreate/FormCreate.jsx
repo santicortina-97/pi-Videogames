@@ -132,7 +132,7 @@ const FormCreate = () => {
             </select>
             {errors.genres ? <span style={{color:"red"}}>{errors.genres}</span> : null}
 
-            <button type='submit' onClick={handleSubmit}>Crear</button>
+            <button type='submit' onClick={handleSubmit}>Create</button>
                 {/* //!Mostrar lo que va a crear */}
                 <img src={game.image} alt="" />
                 <p>{game.name}</p>

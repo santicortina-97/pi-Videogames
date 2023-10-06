@@ -6,6 +6,11 @@ export const GET_DETAIL = "GET_DETAIL"
 export const POST_GAME = "POST_GAME"
 export const GET_GENRES = "GET_GENRES"
 export const GET_PLATFORMS = "GET_PLATFORMS"
+//Filtos
+export const FILTER_GENRE = "FILTER_GENRE"
+export const FILTER_API = "FILTER_API"
+export const ORDER = "ORDER"
+
 
 
 export function getGames(){
@@ -81,5 +86,44 @@ export function getPlatforms(){
         } catch (error) {
             console.log(error)
         }
+    }
+}
+
+
+
+export function filterGenre(genres){
+/*     return{
+        type: FILTER_GENRE,
+        payload: genres
+    } */
+    return async function(dispatch){
+        try {
+            dispatch({
+                type: FILTER_GENRE,
+                payload: genres
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+
+
+/* FILTER_API
+export function filterApi(){
+    return{
+        type: FILTER_API,
+        payload: 
+    }
+} */
+
+
+
+
+export function order(order){
+    return{
+        type: ORDER,
+        payload: order
     }
 }

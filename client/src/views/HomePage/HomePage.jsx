@@ -5,13 +5,14 @@ import { getGames, getByName } from "../../redux/actions"
 import React from 'react'
 import Cards from '../../components/Cards/Cards'
 import Navbar from "../../components/Navbar/Navbar"
+import Filter from "../../components/Filter/Filter"
 
 const HomePage = () => {
 
     const dispatch = useDispatch();
     const allGame = useSelector((state) => state.allGame) //Estar suscripto al estado, cuando se modifique el estado tambien se modifica el componente
 
-    //!Filtro por nombre con el back
+    //!Busqueda por nombre
     const[search, setSearch] = useState("")
     function handleChange(e){
         e.preventDefault();
@@ -30,11 +31,13 @@ const HomePage = () => {
         dispatch(getGames())
     },[])
 
+/*     console.log("hola") */
     return (
         <div>
             <Navbar handleChange={handleChange} handleSubmit={handleSubmit}/>
+            <Filter/>
             <h2>Home</h2>
-            <Cards allGame={allGame}/>
+{/*             <Cards allGame={allGame}/> */}
         </div>
     )
 }

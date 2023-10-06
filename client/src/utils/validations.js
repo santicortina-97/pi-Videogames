@@ -50,8 +50,8 @@ export function formValidation(game){
     if(!regexDate.test(game.releaseDate)/* !game.releaseDate */){
         errors.releaseDate= "Ingresa una fecha valida"
     }
-    if(isNaN(game.rating)){
-        errors.rating= "El rating solamente permite Numeros"
+    if(isNaN(game.rating) || game.rating < 0 || game.rating > 5){
+        errors.rating= "Ingrese un puntaje de 0 a 5"
     }
     if(game.genres.length < 1){
         errors.genres= "Elige un Genero"
