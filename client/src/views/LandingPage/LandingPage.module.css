@@ -1,3 +1,19 @@
+body{
+/*     background: #414649;
+    background: -moz-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
+    background: -webkit-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
+    background: radial-gradient(ellipse at center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%); */
+/*     background: rgb(125,237,255);
+    background: -moz-radial-gradient(center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%);
+    background: -webkit-radial-gradient(center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%);
+    background: radial-gradient(ellipse at center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%); */
+    background: rgb(93,176,190);
+    background: -moz-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
+    background: -webkit-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
+    background: radial-gradient(ellipse at center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
+    background-attachment: fixed;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -24,7 +40,7 @@
     border-radius: 50%;
     box-shadow: inset 0px 0px 55px 5px rgba(149,245,0,1);
 /*     box-shadow: 0px 0px 55px 5px rgba(2,45,222,1); */
-    transform: translateY(350px);
+    transform: translateY(325px);
 }
 
 .button:hover{

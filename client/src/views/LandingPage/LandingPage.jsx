@@ -6,21 +6,24 @@ import backgroundImage from "../../assets/22896-ps4.jpg"
 const LandingPage = () => {
     useEffect(() => {
         // Aplicar estilos al cuerpo del documento
-        document.body.style.backgroundImage = `url(https://c.wallhere.com/photos/08/2a/Nintendo_Entertainment_System_GameCube_Wii_Nintendo_64_Super_Nintendo_controllers-192230.jpg!d)`;
-        /* document.body.style.backgroundImage = `url("${backgroundImage}")`; */
-        /* document.body.style.backgroundImage = `url(${backgroundImage})`; */
-        document.body.style.backgroundSize = "100% 100%"; // Cubrir toda la ventana del navegador
-        document.body.style.backgroundRepeat = "no-repeat"; // No repetir la imagen
-        document.body.style.backgroundColor = "#f0f0f0"; // Color de fondo en caso de que la imagen no cargue o no cubra toda la ventana
-        document.body.style.backgroundAttachment = "fixed"; // Posición del fondo en el centro
-
+        // document.body.style.backgroundImage = `url(https://media.kingston.com/kingston/hero/ktc-hero-blog-gaming-cloud-gaming-advantages-disadvantages-lg.jpg)`;
+        // document.body.style.backgroundSize = "100% 100%"; // Cubrir toda la ventana del navegador
+        // document.body.style.backgroundRepeat = "no-repeat"; // No repetir la imagen
+        // document.body.style.backgroundColor = "#f0f0f0"; // Color de fondo en caso de que la imagen no cargue o no cubra toda la ventana
+        // document.body.style.backgroundAttachment = "fixed"; // Posición del fondo en el centro
+        // document.body.style.background= "#414649"
+        // document.body.style.background= "-moz-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%)"
+        // document.body.style.background= "-webkit-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%)"
+        // document.body.style.background= "radial-gradient(ellipse at center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%)"
+        // document.body.style.backgroundAttachment= "fixed"
         // Limpia los estilos al desmontar el componente
         return () => {
-            document.body.style.backgroundImage = null;
-            document.body.style.backgroundSize = null;
-            document.body.style.backgroundRepeat = null;
-            document.body.style.backgroundColor = null;
-            document.body.style.backgroundPosition = null;
+            // document.body.style.backgroundImage = null;
+            // document.body.style.backgroundSize = null;
+            // document.body.style.backgroundRepeat = null;
+            // document.body.style.backgroundColor = null;
+            // document.body.style.backgroundPosition = null;
+            document.body.style.background = null;
         }
     }, []);
 

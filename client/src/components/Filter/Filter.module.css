@@ -1,19 +1,28 @@
 .container{
     display: flex;
     justify-content: space-around;
+/*     justify-content: center;
+    gap: 100px; */
 }
 
 .filterContainer{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 20px;
     border: 1px solid black;
     border-radius: 20px;
     height: 90%;
     position: sticky;
     top: 20px;
     padding: 30px;
+    background-color: #7fbbdc;
+    backdrop-filter: blur(50px);
+    transform: translateX(-50px);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }
 
 .rating{

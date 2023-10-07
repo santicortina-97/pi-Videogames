@@ -22,6 +22,11 @@ const Filter = () => {
     const [descendentRatingCheckbox, setDescendentRatingCheckbox] = useState(false)
     const [ascendentNameCheckbox, setAscendentNameCheckbox] = useState(false)
     const [descendentNameCheckbox, setDescendentNameCheckbox] = useState(false)
+    const [genreCheckbox, setGenreCheckbox] = useState(false)
+    
+    //estado para limpiar filtros
+    const [filterActive, setFilterActive] = useState(false)
+
     
 
     function handleOrder(e){
@@ -32,14 +37,40 @@ const Filter = () => {
 /*         dispatch(order(e.target.value)) */
         dispatch(order(e.target.value))
         setAux(true)
+        setFilterActive(true)
     }
 
-    function handleFilter(e){
-/*         if(e.target.value === "All"){
-            dispatch(filterGenre(e.target.value))
-        }else{ */
-            dispatch(filterGenre(e.target.value))
-/*         } */
+    function handleFilter(e) {
+        const genreValue = e.target.value;
+    
+        // Desmarca todos los checkboxs
+        const updatedCheckboxState = {};
+        genres.genresData.forEach((genre) => {
+        updatedCheckboxState[genre.name] = false;
+        });
+    
+        // Marca el checkbox seleccionado
+        updatedCheckboxState[genreValue] = true;
+    
+        setGenreCheckbox(updatedCheckboxState);
+        dispatch(filterGenre(e.target.value));
+        setFilterActive(true);
+    }
+    
+
+    function clearFilter(){
+        setAscendentRatingCheckbox(false);
+        setDescendentRatingCheckbox(false);
+        setAscendentNameCheckbox(false);
+        setDescendentNameCheckbox(false);
+    // Desseleccionar todos los géneros
+    const clearedGenreCheckboxs = {};
+    for (const genre of genres.genresData) {
+        clearedGenreCheckboxs[genre.name] = false;
+    }
+    setGenreCheckbox(clearedGenreCheckboxs);
+
+    dispatch(filterGenre('All'));
     }
 
 
@@ -48,9 +79,9 @@ const Filter = () => {
             <div>
             </div>
             <div className={style.filterContainer}>
-                <div>
-                    <input type="checkbox" />
-                    <label htmlFor="">My Games</label>
+                <div className={style.buttons}>
+                    <button htmlFor="">My Games</button>
+                    <button onClick={() => clearFilter()} disabled={!filterActive}>Clear Filters</button>
                 </div>
                 <div className={style.rating}>
                     <h3 className={style.title}>Order Rating</h3>
@@ -78,10 +109,10 @@ const Filter = () => {
                 </div>
                 <div className={style.genre}>
                     <h3 className={style.title}>Filter genre</h3>
-                    <div>
+{/*                     <div>
                         <input type="checkbox" value="All" name='genres' onChange={handleFilter}/>
                         <label htmlFor="">All</label>
-                    </div>
+                    </div> */}
                 {genres.genresData?.map((genre) => (
                     <div key={genre.id}>
                         <input
@@ -89,6 +120,7 @@ const Filter = () => {
                             value={genre.name}
                             name='genres'
                             onChange={handleFilter}
+                            checked={genreCheckbox[genre.name]}
                         />
                         <label>{genre.name}</label>
                     </div>

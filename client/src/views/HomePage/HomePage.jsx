@@ -27,6 +27,11 @@ const HomePage = () => {
             alert("No hay Viseojuegos")
         }
     }
+    //Restablecer la busqueda
+    function resetSearch(){
+        setSearch("")
+    }
+
     useEffect(() =>{
         dispatch(getGames())
     },[])
@@ -34,7 +39,7 @@ const HomePage = () => {
 /*     console.log("hola") */
     return (
         <div>
-            <Navbar handleChange={handleChange} handleSubmit={handleSubmit}/>
+            <Navbar handleChange={handleChange} handleSubmit={handleSubmit} resetSearch={resetSearch}/>
             <Filter/>
 {/*             <Cards allGame={allGame}/> */}
         </div>
