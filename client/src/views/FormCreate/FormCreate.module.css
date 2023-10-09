@@ -1,0 +1,123 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/*     background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 750px;
+    transform: translateX(550px);  
+    position: fixed;
+    width: 100%;
+    height: 100%; */
+/*     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute; */
+}
+
+.containerNintendo{
+    background-image: url(../../assets/NintendoForm.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 60%;
+    height: 900px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 200px;
+}
+
+.containerForm{
+    display: flex;
+    gap: 100px;
+}
+
+.form1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+    transform: translateY(15px);
+}
+
+.form1 > input{
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.form1 > input::placeholder{
+    color: black;
+}
+
+.form1 > input:active {
+    transform: scale(0.95);
+}
+
+.form1 > input:focus {
+    border: 2px solid grey;
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+                inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.info{
+    display: flex;
+/*     flex-direction: row; */
+    gap: 50px;
+    justify-content: center;
+/*     align-items: center; */
+    transform: translateY(120px);
+}
+
+
+
+/* .imageName{
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .imageName:has(img){
+    width: 250px;
+    height: 200px;
+} */
+.image{
+    width: 250px;
+    height: 250px;
+}
+
+/* .imageName > p{
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+} */
+
+/* .dataRating{
+    display: flex;
+}
+*/
+.datos{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap; /* Evita el salto de línea */
+    overflow: hidden; /* Oculta el contenido desbordado */
+    gap: 40px;
+    text-wrap: wrap;
+    border: 1px solid black;
+    width: 300px;
+    color: white;
+} 
+

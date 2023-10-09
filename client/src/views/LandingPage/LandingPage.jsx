@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {NavLink} from "react-router-dom"
 import style from "./LandingPage.module.css";
-import backgroundImage from "../../assets/22896-ps4.jpg"
+/* import backgroundImage from "../../assets/22896-ps4.jpg" */
 
 const LandingPage = () => {
     useEffect(() => {

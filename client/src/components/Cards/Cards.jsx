@@ -7,9 +7,10 @@ const Cards = ({allGame}) => {
   /* console.log(gamesList) */
   /* const gamesList = Array.isArray(allGame.results) ? allGame.results : []; */
 
+
   return (
     <div className={style.container}>
-      {gamesList.map((game) =><Card game={game}/>)}
+      {gamesList.map((game) =><Card key={game.id} game={game}/>)}
     </div>
   )
 }

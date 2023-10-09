@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import style from "./Card.module.css"
 
 const Card = ({game}) => {
-  console.log(game)
-  const {image, name, id, rating,genres} = game
+  /* console.log(game) */
+  const {image, name, id, rating, genres} = game
 /*   console.log(platform) */
   return (
     <div className={style.card}>
@@ -15,7 +15,7 @@ const Card = ({game}) => {
         </div>
         <div className={style.cardBack}>
           <div className={style.idRating}>
-            <p>Id: {id}</p>
+            {typeof id === 'number' && <p>Id: {id}</p>}
             <p>Rating: {rating}</p>
           </div>
           <div className={style.genres}>
