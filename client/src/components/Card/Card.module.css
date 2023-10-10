@@ -5,7 +5,7 @@
 }
 
 .name{
-    color: black;
+    color: white;
     margin-top: 10px;
 }
 
@@ -48,12 +48,13 @@
 } */
 
 .cardBack{
-    background-color: rgba(245, 245, 220, 0.232);
+    /* background-color: rgba(245, 245, 220, 0.232); */
+    background-color: #4895efcf;
     display: flex;
     flex-direction: column;
     transform: rotateY(180deg);
-    color: black;
-    border: 1.5px solid #FB1C94;
+    color: white;
+    border: 1.5px solid #B5179E;
 }
 .idRating{
     display: flex;

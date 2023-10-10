@@ -12,8 +12,6 @@ const Navbar = ({handleChange,handleSubmit, resetSearch}) => {
         <button onClick={resetSearch}>Reset</button>
       </form>
       <NavLink to={"/create"}><button>Create</button></NavLink>
-      
-      <button>Created</button>
     </div>
   )
 }

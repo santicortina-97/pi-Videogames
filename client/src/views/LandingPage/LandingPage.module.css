@@ -3,14 +3,17 @@ body{
     background: -moz-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
     background: -webkit-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
     background: radial-gradient(ellipse at center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%); */
-/*     background: rgb(125,237,255);
-    background: -moz-radial-gradient(center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%);
-    background: -webkit-radial-gradient(center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%);
-    background: radial-gradient(ellipse at center, rgb(125,237,255) 0%, rgb(150,186,255) 50%, rgb(150,186,255) 100%); */
-    background: rgb(93,176,190);
+/*     background: rgb(93,176,190);
     background: -moz-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
     background: -webkit-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
-    background: radial-gradient(ellipse at center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
+    background: radial-gradient(ellipse at center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%); */
+/*     background: rgb(63,55,201);
+    background: rgb(63,55,201);
+    background: radial-gradient(circle, rgba(63,55,201,1) 0%, rgba(72,149,239,1) 0%, rgba(67,97,238,1) 100%); */
+/*     background-color: rgba(0, 0, 0, 0.4); */
+    background-image: url("https://fondosmil.co/fondo/28271.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-attachment: fixed;
 }
 

@@ -153,25 +153,95 @@ const FormCreate = () => {
     // </div>
 
     //!PRUEBA
-    <div className={style.container}>
-    <div className={style.containerNintendo}>
-        <div className={style.info}>
-            {/* <img src={game.image} alt="" /> */}
-            <div className={style.imageName}>
-                {game.image && <img src={game.image} className={style.image} />}
-                <p>{game.name}</p>
-                <div className={style.dataRating}>
-                    <p>{game.releaseDate}</p>
-                    <p>{game.rating}</p>
-                </div>
-            </div>
-            <div className={style.datos}>
-                <p>{game.description}</p>
-                <p>{game.platform.join(' - ')}</p>
-                <p>{game.genres.join(' - ')}</p>
-            </div>
-        </div>
+//     <div className={style.container}>
+//     <div className={style.containerNintendo}>
+//         <div className={style.info}>
+//             {/* <img src={game.image} alt="" /> */}
+//             <div className={style.imageName}>
+//                 {game.image && <img src={game.image} className={style.image} />}
+//                 <p>{game.name}</p>
+//                 <div className={style.dataRating}>
+//                     <p>{game.releaseDate}</p>
+//                     <p>{game.rating}</p>
+//                 </div>
+//             </div>
+//             <div className={style.datos}>
+//                 <p>{game.description}</p>
+//                 <p>{game.platform.join(' - ')}</p>
+//                 <p>{game.genres.join(' - ')}</p>
+//             </div>
+//         </div>
 
+//     <form onSubmit={handleSubmit} /* style={{display:"flex", flexDirection:"column", width:"200px", marginLeft:"45%"}} */ className={style.form}>
+//         <div className={style.containerForm}>
+
+//             <div className={style.form1}>
+//                 <div>
+// {/*                 <label htmlFor="">Name:</label> */}
+//                     <input type="text" name='name' value={game.name} onChange={handleChange} placeholder='Name:'/>
+//                     {errors.name && <p style={{color:"red"}}>{errors.name}</p>}
+//                 </div>
+
+//                 <div>
+//     {/*                 <label htmlFor="">Image: </label> */}
+//                     <input type="text" name='image' value={game.image} onChange={handleChange} placeholder='Image:'/>
+//                     {errors.image && <p style={{color:"red"}}>{errors.image}</p>}
+//                 </div>
+
+//                 <div>
+//     {/*                 <label htmlFor="">Description:</label> */}
+//                     <input type="text" name='description' value={game.description} onChange={handleChange} placeholder='Description:'/>
+//                     {errors.description && <p style={{color:"red"}}>{errors.description}</p>}
+//                 </div>
+
+//                 <div>
+//     {/*                 <label htmlFor="">Release Date:</label> */}
+//                     <input type="text" name='releaseDate' value={game.releaseDate} onChange={handleChange} placeholder='Release Date:'/>
+//                     {errors.releaseDate && <p style={{color:"red"}}>{errors.releaseDate}</p>}
+//                 </div>
+
+//                 <div>
+//     {/*                 <label htmlFor="">Rating:</label> */}
+//                     <input type="text" name='rating' value={game.rating} onChange={handleChange} placeholder='Rating:'/>
+//                     {errors.rating && <p style={{color:"red"}}>{errors.rating}</p>} 
+//                 </div>
+//             </div>
+
+//             <div className={style.form2}>
+//                 <label htmlFor="">Platforms:</label>
+//                 <select name="platform" onChange={handleChange} defaultValue="">
+//                     <option value="" disabled>Platforms</option>
+//                     {platforms.platforms?.map((platftorm) =>(
+//                         <option key={platftorm.id} value={platforms.name} onChange={handleChange}>{platftorm}</option>
+//                     ))}
+//                 </select>
+//                 {errors.platform && <span style={{color:"red"}}>{errors.platform}</span>}
+
+//                 <label htmlFor="">Genres:</label>
+//                 <select name="genres" onChange={handleChange} defaultValue="">
+//                     <option value="" disabled>Genres</option>
+//                     {genres.genresData?.map((genre) =>(
+//                         <option key={genre.id} value={genres.name} onChange={handleChange}>{genre.name}</option>
+//                     ))}
+//                 </select>
+//                 {errors.genres ? <span style={{color:"red"}}>{errors.genres}</span> : null}
+
+
+//             </div>
+//         </div>
+
+
+
+
+
+
+//         <button type='submit' onClick={handleSubmit}>Create</button>
+//     </form>
+//     </div>
+// </div>
+    //!PRUEBA 2
+<div className={style.container}>
+    <div /* className={style.containerNintendo} */>
     <form onSubmit={handleSubmit} /* style={{display:"flex", flexDirection:"column", width:"200px", marginLeft:"45%"}} */ className={style.form}>
         <div className={style.containerForm}>
 
@@ -225,18 +295,28 @@ const FormCreate = () => {
                     ))}
                 </select>
                 {errors.genres ? <span style={{color:"red"}}>{errors.genres}</span> : null}
-
-
             </div>
         </div>
-
-
-
-
-
-
         <button type='submit' onClick={handleSubmit}>Create</button>
     </form>
+    </div>
+    <div className={style.containerNintendo}>
+        <div className={style.info}>
+            {/* <img src={game.image} alt="" /> */}
+            <div className={style.imageName}>
+                {game.image && <img src={game.image} className={style.image} />}
+                <p>{game.name}</p>
+                <div className={style.dataRating}>
+                    <p>{game.releaseDate}</p>
+                    <p>{game.rating}</p>
+                </div>
+            </div>
+            <div className={style.datos}>
+                <p>{game.description}</p>
+                <button>{game.platform.join(' - ')}</button>
+                <button>{game.genres.join(' - ')}</button>
+            </div>
+        </div>
     </div>
 </div>
     )

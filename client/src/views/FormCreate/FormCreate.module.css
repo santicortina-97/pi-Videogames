@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 /*     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 750px;
@@ -19,8 +20,10 @@
     background-image: url(../../assets/NintendoForm.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 60%;
-    height: 900px;
+    width: 70%;
+    margin-top: 50px;
+    height: 500px;
+    color: white;
 }
 
 .form{
@@ -29,7 +32,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 .containerForm{
@@ -77,10 +80,11 @@
 .info{
     display: flex;
 /*     flex-direction: row; */
-    gap: 50px;
+    gap: 100px;
     justify-content: center;
-/*     align-items: center; */
-    transform: translateY(120px);
+    align-items: center;
+    transform: translateY(75px);
+
 }
 
 
@@ -95,28 +99,33 @@
     height: 200px;
 } */
 .image{
-    width: 250px;
-    height: 250px;
+/*     width: 300px;
+    height: 300px; */
+
+    max-width: 100%;
+    max-height: 300px;
 }
 
-/* .imageName > p{
+.imageName > p{
     text-align: center;
     font-size: x-large;
     font-weight: bold;
-} */
-
-/* .dataRating{
-    display: flex;
 }
-*/
+
+.dataRating{
+    display: flex;
+    justify-content: space-between;
+}
+
 .datos{
     display: flex;
     flex-direction: column;
+    align-items: center;
     white-space: nowrap; /* Evita el salto de línea */
     overflow: hidden; /* Oculta el contenido desbordado */
     gap: 40px;
     text-wrap: wrap;
-    border: 1px solid black;
+/*     border: 1px solid black; */
     width: 300px;
     color: white;
 } 

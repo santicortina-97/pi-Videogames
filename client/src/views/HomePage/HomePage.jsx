@@ -15,7 +15,7 @@ const HomePage = () => {
     const allGame = useSelector((state) => state.allGame) //Estar suscripto al estado, cuando se modifique el estado tambien se modifica el componente
     const isLoading = useSelector((state) => state.loading)
     //!PAGINADO
-        const [currentPage, setCurrentPage] = useState(1) //Pagina actual, arranca en 1
+    const [currentPage, setCurrentPage] = useState(1) //Pagina actual, arranca en 1
     const [gamePerPage, setGamePerPage] = useState(15) //juegos por pagina
     const indexLastGame = currentPage * gamePerPage //15
     const indexFirstGame = indexLastGame - gamePerPage //0
@@ -89,7 +89,7 @@ function handleDbFilter(e) {
             <Paginate   gamePerPage={gamePerPage} allGame={allGame.length} paginado={paginado}/>
             <div className={style.container}>
                 {isLoading ? (
-                    <div>Cargando...</div>
+                    <div style={{color:"white"}}>Cargando...</div>
                 ): (
                     <>
                     <div className={style.filterContainer}>

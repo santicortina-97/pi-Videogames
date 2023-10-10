@@ -67,7 +67,10 @@ const getIdController = async (req, res) =>{
                 id: data.id,
                 name: data.name,
                 image: data.background_image,
+                imageAditional: data.background_image_additional,
+                website: data.website,
                 description: data.description,
+                rating: data.rating,
                 platform: platformVideogame,
                 genres: genresVideogame
             };
