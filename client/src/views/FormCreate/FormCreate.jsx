@@ -18,7 +18,7 @@ const FormCreate = () => {
         dispatch(getGenres())
         dispatch(getPlatforms())
     },[])
-    console.log(platforms)
+/*     console.log(platforms) */
     const [game, setGame] = useState({
             name: "",
             description: "",
@@ -156,7 +156,7 @@ const FormCreate = () => {
     <div className={style.container}>
     <div className={style.containerNintendo}>
         <div className={style.info}>
-{/*             {<img src={game.image} alt="" />} */}
+            {/* <img src={game.image} alt="" /> */}
             <div className={style.imageName}>
                 {game.image && <img src={game.image} className={style.image} />}
                 <p>{game.name}</p>

@@ -1,5 +1,7 @@
 const axios = require("axios");
+const {Videogame} = require("../db")
 const {API_KEY} = process.env
+
 
 
 const getVideogamesController = async (req, res) =>{
@@ -7,6 +9,7 @@ const getVideogamesController = async (req, res) =>{
             const maxPages= 5;
             const videogames = [];
             try {
+                const databaseVideogames = await Videogame.findAll();
                 for(let page = 1; page <= maxPages; page++){
                         const {data} = await axios(`${URL}?key=${API_KEY}&page=${page}`);
                         if(data.results){
@@ -24,11 +27,12 @@ const getVideogamesController = async (req, res) =>{
                                 image: game.background_image ,
                                 released: game.released ,
                                 rating: game.rating ,
+                                created: false,
                             }))
                             );
                         };
                     }
-                return res.status(200).json(videogames)
+                return res.status(200).json([...videogames, ...databaseVideogames])
             } catch (error) {
                 return res.status(500).json(error.message)
             }

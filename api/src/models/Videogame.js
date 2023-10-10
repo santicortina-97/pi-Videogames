@@ -34,6 +34,10 @@ module.exports = (sequelize) => {
     rating:{
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    created:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     }
   }, { timestamps: false });
 };

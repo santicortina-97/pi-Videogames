@@ -1,135 +1,92 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { order, filterGenre, getGenres} from '../../redux/actions'
-import Cards from '../Cards/Cards'
-import style from "./Filter.module.css"
+// import React from 'react'
+// import { useState, useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { order, filterGenre, getGenres, cleanFilter, filterDb} from '../../redux/actions'
+// import Cards from '../Cards/Cards'
+// import style from "./Filter.module.css"
 
 
-const Filter = () => {
-    const dispatch = useDispatch();
-    const orden = useSelector((state) => state.allGame)
-    const filtered = useSelector((state) => state.allGame)
-    const genres = useSelector((state) => state.genres)
+// const Filter = () => {
+//     const dispatch = useDispatch();
+//     const orden = useSelector((state) => state.allGame)
+//     const filtered = useSelector((state) => state.allGame)
+//     const genres = useSelector((state) => state.genres)
+// /*     console.log(orden) */
+//     useEffect(() =>{
+//         dispatch(getGenres())
+//     },[])
 
-    useEffect(() =>{
-        dispatch(getGenres())
-    },[])
+// /* console.log(filtered) */
+//     const [aux, setAux] = useState(false)
 
-/* console.log(filtered) */
-    const [aux, setAux] = useState(false)
-    const [ascendentRatingCheckbox, setAscendentRatingCheckbox] = useState(false)
-    const [descendentRatingCheckbox, setDescendentRatingCheckbox] = useState(false)
-    const [ascendentNameCheckbox, setAscendentNameCheckbox] = useState(false)
-    const [descendentNameCheckbox, setDescendentNameCheckbox] = useState(false)
-    const [genreCheckbox, setGenreCheckbox] = useState(false)
+// function handleDbFilter(e) {
+//     dispatch(filterDb(e.target.value));
+// }
+
+
+
+//     function handleOrder(e){
+//         dispatch(order(e.target.value))
+//         setAux(true)
+//     }
+
+//     function handleFilter(e) {
+//         dispatch(filterGenre(e.target.value));
+//     }
     
-    //estado para limpiar filtros
-    const [filterActive, setFilterActive] = useState(false)
-
-    
-
-    function handleOrder(e){
-        setAscendentRatingCheckbox(e.target.value === "ascendentRating")
-        setDescendentRatingCheckbox(e.target.value === "descendentRating")
-        setAscendentNameCheckbox(e.target.value === "ascendentName")
-        setDescendentNameCheckbox(e.target.value === "descendentName")
-/*         dispatch(order(e.target.value)) */
-        dispatch(order(e.target.value))
-        setAux(true)
-        setFilterActive(true)
-    }
-
-    function handleFilter(e) {
-        const genreValue = e.target.value;
-    
-        // Desmarca todos los checkboxs
-        const updatedCheckboxState = {};
-        genres.genresData.forEach((genre) => {
-        updatedCheckboxState[genre.name] = false;
-        });
-    
-        // Marca el checkbox seleccionado
-        updatedCheckboxState[genreValue] = true;
-    
-        setGenreCheckbox(updatedCheckboxState);
-        dispatch(filterGenre(e.target.value));
-        setFilterActive(true);
-    }
     
 
-    function clearFilter(){
-        setAscendentRatingCheckbox(false);
-        setDescendentRatingCheckbox(false);
-        setAscendentNameCheckbox(false);
-        setDescendentNameCheckbox(false);
-    // Desseleccionar todos los géneros
-    const clearedGenreCheckboxs = {};
-    for (const genre of genres.genresData) {
-        clearedGenreCheckboxs[genre.name] = false;
-    }
-    setGenreCheckbox(clearedGenreCheckboxs);
 
-    dispatch(filterGenre('All'));
-    }
+//     function clean(){
+//         dispatch(cleanFilter())
+//         const selectElements = document.getElementsByTagName("select");
+//         for (let select of selectElements) {
+//             select.selectedIndex = 0;
+//         }
+//     }
 
+//     return (
+//         <div className={style.container}>
+//             <div>
+//             </div>
+//             <div className={style.filterContainer}>
+//                 <div className={style.buttons}>
+//                     <select onChange={handleDbFilter}>
+//                         <option value="" disabled>Select</option>
+//                         <option value="All">API</option>
+//                         <option value="DB">DB</option>
+//                     </select>
 
-    return (
-        <div className={style.container}>
-            <div>
-            </div>
-            <div className={style.filterContainer}>
-                <div className={style.buttons}>
-                    <button htmlFor="">My Games</button>
-                    <button onClick={() => clearFilter()} disabled={!filterActive}>Clear Filters</button>
-                </div>
-                <div className={style.rating}>
-                    <h3 className={style.title}>Order Rating</h3>
-                    <div style={{display:"flex", flexDirection:"column"}}>
-                        <div>
-                            <input type="checkbox" value="ascendentRating" onChange={handleOrder} checked={ascendentRatingCheckbox}/>
-                            <label htmlFor="">Ascendent</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" value="descendentRating" onChange={handleOrder} checked={descendentRatingCheckbox}/>
-                            <label htmlFor="">Descendent</label>
-                        </div>
-                    </div>
-                </div>
-                <div className={style.name}>
-                    <h3 className={style.title}>Order Name</h3>
-                    <div>
-                        <input type="checkbox" value="ascendentName" onChange={handleOrder} checked={ascendentNameCheckbox}/>
-                        <label htmlFor="">Ascendent</label>                        
-                    </div>
-                    <div>
-                        <input type="checkbox" value="descendentName" onChange={handleOrder} checked={descendentNameCheckbox}/>
-                        <label htmlFor="">Descendent</label>
-                    </div>
-                </div>
-                <div className={style.genre}>
-                    <h3 className={style.title}>Filter genre</h3>
-{/*                     <div>
-                        <input type="checkbox" value="All" name='genres' onChange={handleFilter}/>
-                        <label htmlFor="">All</label>
-                    </div> */}
-                {genres.genresData?.map((genre) => (
-                    <div key={genre.id}>
-                        <input
-                            type="checkbox"
-                            value={genre.name}
-                            name='genres'
-                            onChange={handleFilter}
-                            checked={genreCheckbox[genre.name]}
-                        />
-                        <label>{genre.name}</label>
-                    </div>
-                ))}
-                </div>
-            </div>
-            <Cards allGame={orden} filterGenre={filtered}/>
-        </div>
-    )
-}
+//                     <button onClick={clean}>Reset</button>
+//                 </div>
+//                 <div className={style.rating}>
+//                     <h3 className={style.title}>Order Rating</h3>
+//                     <div style={{display:"flex", flexDirection:"column"}}>
+//                         <select name="" id="" onChange={handleOrder}>
+//                             <option value="ascendentRating">Ascendent</option>
+//                             <option value="descendentRating">Descendent</option>
+//                         </select>
+//                     </div>
+//                 </div>
+//                 <div className={style.name}>
+//                     <h3 className={style.title}>Order Name</h3>
+//                         <select name="" id="" onChange={handleOrder}>
+//                             <option value="ascendentName">A-Z</option>
+//                             <option value="descendentName">Z-A</option>
+//                         </select>
+//                 </div>
+//                 <div className={style.genre}>
+//                     <h3 className={style.title}>Filter genre</h3>
+//                     <select name='genres' id="" onChange={handleFilter}>
+//                         {genres.genresData?.map((genre) => (
+//                                     <option value={genre.name}>{genre.name}</option>
+//                         ))}
+//                     </select>
+//                 </div>
+//             </div>
+//             <Cards allGame={orden} filterGenre={filtered}/>
+//         </div>
+//     )
+// }
 
-export default Filter
+// export default Filter

@@ -54,7 +54,8 @@ const postVideogamesController = async (req, res) =>{
         });
         return res.status(200).json(returnGame)
     } catch (error) {
-        res.status(500).json(error.message)
+        res.status(500).json({ error: "Error al crear el juego", details: error.message });
+
     }
 
 //     const { name, releaseDate, description, platform, image, rating, genres } =

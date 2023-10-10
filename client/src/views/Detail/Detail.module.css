@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    width: calc(500px * 4/3);
+    height: 500px;
+    max-height: 500px;
+    padding-top: 5px;
+    object-fit: cover;
+    border-radius: 15px;
+    overflow: hidden;
+}

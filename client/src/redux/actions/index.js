@@ -6,10 +6,14 @@ export const GET_DETAIL = "GET_DETAIL"
 export const POST_GAME = "POST_GAME"
 export const GET_GENRES = "GET_GENRES"
 export const GET_PLATFORMS = "GET_PLATFORMS"
+export const PAGINATE = "PAGINATE"
 //Filtos
 export const FILTER_GENRE = "FILTER_GENRE"
 export const FILTER_DB = "FILTER_DB"
 export const ORDER = "ORDER"
+export const CLEAN_FILTER = "CLEAN_FILTER"
+//Loading
+export const LOADING = "LOADING"
 
 
 
@@ -26,7 +30,7 @@ export function getGames(){
 export function getByName(name){
     return async function(dispatch){
         let response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
-        console.log(response.data)
+/*         console.log(response.data) */
         return dispatch({
             type:"GET_BY_NAME",
             payload:response.data
@@ -37,7 +41,7 @@ export function getByName(name){
 export function getDetail(id){
     return async function(dispatch){
         let response = await axios(`http://localhost:3001/videogames/${id}`)
-        console.log(response.data)
+/*         console.log(response.data) */
         return dispatch({
             type:"GET_DETAIL",
             payload:response.data
@@ -108,22 +112,38 @@ export function filterGenre(genres){
     }
 }
 
-
-
-/* FILTER_DB
-export function filterApi(){
-    return{
-        type: FILTER_DB,
-        payload: 
-    }
-} */
-
-
+/* FILTER_DB */
+export function filterDb(payload){
+    console.log(payload)
+    return { 
+        type: FILTER_DB, 
+        payload 
+    };
+}
 
 
 export function order(order){
     return{
         type: ORDER,
         payload: order
+    }
+}
+
+export function cleanFilter(){
+    return async function(dispatch){
+        try {
+            dispatch({
+                type: CLEAN_FILTER,
+                payload: []
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export function loading(){
+    return{
+        type: LOADING,
     }
 }

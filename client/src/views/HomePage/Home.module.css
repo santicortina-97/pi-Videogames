@@ -17,7 +17,7 @@
     padding: 30px;
     background-color: #7fbbdc;
 /*     box-shadow: 0px 0px 23px 0px rgba(0,215,255,1); */
-box-shadow: rgba(0,215,255,1) 0px 8px 24px, rgba(0,215,255,1) 0px 16px 56px, rgba(0,215,255,1) 0px 24px 80px;
+    box-shadow: rgba(0,215,255,1) 0px 8px 24px, rgba(0,215,255,1) 0px 16px 56px, rgba(0,215,255,1) 0px 24px 80px;
     backdrop-filter: blur(50px);
     transform: translateX(-50px);
 }

@@ -53,7 +53,7 @@
     flex-direction: column;
     transform: rotateY(180deg);
     color: black;
-    border: 1px solid black;
+    border: 1.5px solid #FB1C94;
 }
 .idRating{
     display: flex;
@@ -131,4 +131,6 @@
     object-fit: cover;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: rgba(0,215,255,1) 0px 2px 8px;
+    
 }
