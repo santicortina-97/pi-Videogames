@@ -8,10 +8,10 @@ const Navbar = ({handleChange,handleSubmit, resetSearch}) => {
     <div className={style.container}>
       <form onChange={handleChange} className={style.containerForm}>
         <input type="text" />
-        <button type='submit' onClick={handleSubmit}>Search</button>
-        <button onClick={resetSearch}>Reset</button>
+        <button type='submit' onClick={handleSubmit} className={style.button}>Search</button>
+{/*         <button onClick={resetSearch}>Reset</button> */}
       </form>
-      <NavLink to={"/create"}><button>Create</button></NavLink>
+      <NavLink to={"/create"}><button className={style.button}>Create</button></NavLink>
     </div>
   )
 }

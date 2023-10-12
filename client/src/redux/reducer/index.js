@@ -24,7 +24,7 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 allGame:action.payload,
-                gameCopy:action.payload
+/*                 gameCopy:action.payload */
             }
         case GET_DETAIL:
             return{
@@ -88,7 +88,7 @@ function rootReducer(state = initialState, action){
                 allGame: state.gameCopy
             }
         case FILTER_DB: 
-            if (action.payload === "DB") {
+/*             if (action.payload === "DB") {
             const gameCreated = state.gameCopy.filter(game => {
                 console.log(game.created); // Agregar esta línea para depurar
                 return game.created === true;
@@ -102,7 +102,31 @@ function rootReducer(state = initialState, action){
                 ...state,
                 allGame: state.gameCopy
             }
-            }
+            } */
+            if (action.payload === "DB") {
+                const gameCreated = state.gameCopy.filter(game => {
+                    /* console.log(game.created); // Agregar esta línea para depurar */
+                    return game.created === true;
+                });
+                return {
+                    ...state,
+                    allGame: gameCreated
+                };
+            } else if(action.payload === "API"){
+                const gameCreated = state.gameCopy.filter(game => {
+                    /* console.log(game.created); // Agregar esta línea para depurar */
+                    return game.created === false;
+                });
+                return {
+                    ...state,
+                    allGame: gameCreated
+                };
+            } else {
+                return {
+                    ...state,
+                    allGame: state.gameCopy
+                }
+                }
         case LOADING:
             return{
                 ...state,

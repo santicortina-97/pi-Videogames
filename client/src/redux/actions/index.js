@@ -4,6 +4,7 @@ export const GET_GAMES = "GET_GAMES"
 export const GET_BY_NAME = "GET_BY_NAME"
 export const GET_DETAIL = "GET_DETAIL"
 export const POST_GAME = "POST_GAME"
+export const DELETE_GAME = "DELETE_GAME"
 export const GET_GENRES = "GET_GENRES"
 export const GET_PLATFORMS = "GET_PLATFORMS"
 export const PAGINATE = "PAGINATE"
@@ -64,6 +65,24 @@ export function postGame(game){
             console.log(error)
         }
     }
+}
+
+export function deleteGame(id){
+    const endpoint = "http://localhost:3001/delete/" + id
+    return async function(dispatch){
+        try {
+            const {data} = await axios.delete(endpoint)
+            if(data){
+                return dispatch({
+                    type: DELETE_GAME,
+                    payload: data
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    
 }
 
 export function getGenres(){
@@ -147,3 +166,4 @@ export function loading(){
         type: LOADING,
     }
 }
+

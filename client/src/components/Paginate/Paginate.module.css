@@ -23,7 +23,8 @@
     flex-direction: row;
     list-style: none;
 } */
-.containerUl{
+
+/* .containerUl{
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -34,7 +35,34 @@
 .button{
     padding: 5px 10px 5px 10px;
     cursor: pointer;
-/*     background: none; */
     box-shadow: 0px 0px 49px 0px rgba(20,204,246,1);
     font-size: large;
+} */
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    gap: 20px;
+}
+
+.button{
+    padding: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 49px 0px rgba(20,204,246,1);
+    font-size: large;
+}
+
+.select{
+    padding: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 49px 0px rgba(20,204,246,1);
+    font-size: large;
+}
+
+.option{
+    padding: 10px;
 }

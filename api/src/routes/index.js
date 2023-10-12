@@ -7,7 +7,7 @@ const {getNameController} = require ("../controllers/getNameController.js")
 const {getVideogamesController} = require ("../controllers/getVideogamesCotroller.js")
 const {postVideogamesController} = require ("../controllers/postVideogamesController.js")
 const {getPlatformsController} = require ("../controllers/getPlatformController.js")
-
+const {deleteGame} = require ("../controllers/deleteGame.js")
 
 const router = Router();
 
@@ -19,6 +19,7 @@ router.get("/videogames", getVideogamesController)
 router.post("/videogames", postVideogamesController)
 router.get("/genre", getGenresController)
 router.get("/platforms", getPlatformsController)
+router.delete("/delete/:id", deleteGame)
 
 
 module.exports = router;

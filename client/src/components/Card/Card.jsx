@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import style from "./Card.module.css"
 
 const Card = ({game}) => {
-  /* console.log(game) */
+/*   console.log(game) */
   const {image, name, id, rating, genres} = game
 /*   console.log(platform) */
   return (

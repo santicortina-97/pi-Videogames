@@ -122,13 +122,9 @@
 
 
 .image{
-/*     width: 300px;
-    min-height: 300px;
-    border-radius: 50px; */
     width: calc(220px * 4/3);
     height: 230px;
     max-height: 230px;
-    padding-top: 5px;
     object-fit: cover;
     border-radius: 15px;
     overflow: hidden;

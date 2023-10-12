@@ -28,12 +28,12 @@ const HomePage = () => {
     const orden = useSelector((state) => state.allGame)
     const filtered = useSelector((state) => state.allGame)
     const genres = useSelector((state) => state.genres)
-/*     console.log(orden) */
-const [aux, setAux] = useState(false)
+    /* console.log(filtered) //! */
+    const [aux, setAux] = useState(false)
 
-function handleDbFilter(e) {
-    dispatch(filterDb(e.target.value));
-}
+    function handleDbFilter(e) {
+        dispatch(filterDb(e.target.value));
+    }
 
 
 
@@ -51,6 +51,7 @@ function handleDbFilter(e) {
 
     function clean(){
         dispatch(cleanFilter())
+        setSearch("")
         const selectElements = document.getElementsByTagName("select");
         for (let select of selectElements) {
             select.selectedIndex = 0;
@@ -69,7 +70,7 @@ function handleDbFilter(e) {
         if(search){
             dispatch(getByName(search))
         }else{
-            alert("No hay Viseojuegos")
+            alert("No hay Videojuegos")
         }
     }
     //Restablecer la busqueda
@@ -86,7 +87,7 @@ function handleDbFilter(e) {
     return (
         <div>
             <Navbar handleChange={handleChange} handleSubmit={handleSubmit} resetSearch={resetSearch}/>
-            <Paginate   gamePerPage={gamePerPage} allGame={allGame.length} paginado={paginado}/>
+            <Paginate   gamePerPage={gamePerPage} allGame={allGame.length} paginado={paginado} currentPage={currentPage}/>
             <div className={style.container}>
                 {isLoading ? (
                     <div style={{color:"white"}}>Cargando...</div>
@@ -94,13 +95,14 @@ function handleDbFilter(e) {
                     <>
                     <div className={style.filterContainer}>
                         <div className={style.buttons}>
-                            <select onChange={handleDbFilter}>
+                            <select onChange={handleDbFilter} value="">
                                 <option value="" disabled>Select</option>
-                                <option value="All">API</option>
+                                <option value="All">All</option>
+                                <option value="API">API</option>
                                 <option value="DB">DB</option>
                             </select>
 
-                            <button onClick={clean}>Reset</button>
+                            <button onClick={clean} className={style.reset}>Reset</button>
                         </div>
                         <div className={style.rating}>
                             <h3 className={style.title}>Order Rating</h3>
@@ -109,6 +111,7 @@ function handleDbFilter(e) {
                                     <option value="ascendentRating">Ascendent</option>
                                     <option value="descendentRating">Descendent</option>
                                 </select>
+
                             </div>
                         </div>
                         <div className={style.name}>
@@ -120,7 +123,8 @@ function handleDbFilter(e) {
                         </div>
                         <div className={style.genre}>
                             <h3 className={style.title}>Filter genre</h3>
-                            <select name='genres' id="" onChange={handleFilter}>
+                            <select name='genres' id="" onChange={handleFilter} value="">
+                                <option value="" disabled>Genres</option>
                                 {genres.genresData?.map((genre) => (
                                             <option value={genre.name}>{genre.name}</option>
                                 ))}

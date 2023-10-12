@@ -15,11 +15,13 @@
     position: sticky;
     top: 20px;
     padding: 30px;
-    background-color: #7fbbdc;
+    background-color: #4ccaf0bd;
+    border: 1px solid black;
+    backdrop-filter: blur(10px);
 /*     box-shadow: 0px 0px 23px 0px rgba(0,215,255,1); */
     box-shadow: 0px 0px 24px 0px rgba(114,9,183,1);
-    backdrop-filter: blur(50px);
-    transform: translateX(-50px);
+/*     backdrop-filter: blur(50px); */
+/*     transform: translateX(-50px); */
 }
 
 .buttons{
@@ -27,27 +29,24 @@
     justify-content: space-between;
 }
 
-.rating{
-    border-bottom: 2px dotted black;
-/*     padding-bottom: 20px; */
-    display: flex;
-    flex-direction: column;
+.reset{
+    padding: 5px;
+    border: none;
+    border-radius: 100px;
+    background-color: #7109b793;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
-
-.name{
-    border-bottom: 2px dotted black;
-/*     padding-bottom: 20px; */
-    display: flex;
-    flex-direction: column;
-}
-
-
+.rating,
+.name,
 .genre{
-/*     padding-bottom: 30px; */
     display: flex;
     flex-direction: column;
 }
+
 
 .title{
     padding-bottom: 10px;
@@ -60,3 +59,19 @@ label{
     margin-bottom: 15px;
     padding: 10px;
 }
+
+
+
+
+@media screen and (max-width: 1000px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+    }
+    .filterContainer{
+        max-width: 500px;
+        position: static;
+    }
+} 
