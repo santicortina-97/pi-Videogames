@@ -3,17 +3,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-/*     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 750px;
-    transform: translateX(550px);  
-    position: fixed;
-    width: 100%;
-    height: 100%; */
-/*     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute; */
 }
 
 .back{
@@ -30,7 +19,6 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 70%;
-/*     margin-top: 50px; */
     height: 500px;
     color: white;
 }
@@ -48,7 +36,6 @@
     padding: 2.5em;
     border-radius: 25px;
     transition: .4s ease-in-out;
-/*     margin-top: 40px; */
 }
 
 .containerForm{
@@ -119,7 +106,6 @@
 
 .info{
     display: flex;
-/*     flex-direction: row; */
     gap: 100px;
     justify-content: center;
     align-items: center;
@@ -128,20 +114,7 @@
 }
 
 
-
-/* .imageName{
-    display: flex;
-    flex-direction: column;
-} */
-
-/* .imageName:has(img){
-    width: 250px;
-    height: 200px;
-} */
 .image{
-/*     width: 300px;
-    height: 300px; */
-
     max-width: 100%;
     max-height: 300px;
     border-radius: 50%;
@@ -166,7 +139,6 @@
     overflow: hidden; /* Oculta el contenido desbordado */
     gap: 40px;
     text-wrap: wrap;
-/*     border: 1px solid black; */
     width: 300px;
     color: white;
 } 
@@ -174,15 +146,16 @@
 .platform,
 .genre{
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     
 }
 
 .button{
     padding: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
+    background-color: #4ccaf00f;
+    border: 1px solid black;
+    border-radius: 20px;
     color: white;
 }
 
@@ -205,27 +178,3 @@
         width: 100%;
     }
 } 
-
-@media screen and (max-width: 1275px){
-    .containerNintendo{
-        width: 100%;
-        background-image: url("https://www.up-switch.com/wp-content/uploads/2022/06/1dfea64c-0b1a-456b-b223-b53168350d68.png");
-    }
-} 
-
-/* @media screen and (max-width: 1260px){
-    .containerNintendo{
-        width: 110%;
-    }
-}  */
-
-
-/* .containerNintendo{
-    background-image: url(../../assets/NintendoForm.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 70%;
-    margin-top: 50px;
-    height: 500px;
-    color: white;
-} */

@@ -1,16 +1,4 @@
 body{
-/*     background: #414649;
-    background: -moz-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
-    background: -webkit-radial-gradient(center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%);
-    background: radial-gradient(ellipse at center, #414649 0%, #0F0F0F 50%, #0F0F0F 100%); */
-/*     background: rgb(93,176,190);
-    background: -moz-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
-    background: -webkit-radial-gradient(center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%);
-    background: radial-gradient(ellipse at center, rgb(93,176,190) 0%, rgb(119,148,202) 50%, rgb(86,107,146) 100%); */
-/*     background: rgb(63,55,201);
-    background: rgb(63,55,201);
-    background: radial-gradient(circle, rgba(63,55,201,1) 0%, rgba(72,149,239,1) 0%, rgba(67,97,238,1) 100%); */
-/*     background-color: rgba(0, 0, 0, 0.4); */
     background-image: url("https://fondosmil.co/fondo/28271.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -23,17 +11,6 @@ body{
     text-align: center;
 }
 
-/* .container svg{
-    color: rgb(173, 175, 173);
-    background-color: #09440A;
-    width: 200px;
-    height: 200px;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0px 0px 55px 5px rgba(2,45,222,1);
-    transform: translateY(250px);
-} */
-
 .button {
     color: black;
     background-color: #95F500;
@@ -42,11 +19,10 @@ body{
     border: none;
     border-radius: 50%;
     box-shadow: inset 0px 0px 55px 5px rgba(149,245,0,1);
-/*     box-shadow: 0px 0px 55px 5px rgba(2,45,222,1); */
     transform: translateY(325px);
 }
 
 .button:hover{
-/*     transition: all 2s ease-out; */
+    transition: all 2s ease-out;
     box-shadow: 0px 0px 50px 1px rgba(149,245,0,1);
 }

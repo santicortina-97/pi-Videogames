@@ -33,7 +33,6 @@ const getVideogamesController = async (req, res) =>{
                         };
                     }
                 return res.status(200).json([...databaseVideogames, ...videogames])
-                /* return res.status(200).json([...videogames, ...databaseVideogames]) */
             } catch (error) {
                 return res.status(500).json(error.message)
             }

@@ -1,15 +1,12 @@
 .container{
     display: flex;
     justify-content: space-around;
-/*     justify-content: center;
-    gap: 100px; */
 }
 
 .filterContainer{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* border: 1px double blue; */
     border-radius: 20px;
     height: 90%;
     position: sticky;
@@ -18,10 +15,7 @@
     background-color: #4ccaf0bd;
     border: 1px solid black;
     backdrop-filter: blur(10px);
-/*     box-shadow: 0px 0px 23px 0px rgba(0,215,255,1); */
     box-shadow: 0px 0px 24px 0px rgba(114,9,183,1);
-/*     backdrop-filter: blur(50px); */
-/*     transform: translateX(-50px); */
 }
 
 .buttons{

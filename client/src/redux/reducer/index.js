@@ -6,8 +6,6 @@ let initialState={
     detailgame: {},
     genres: [],
     platforms: [],
-    filterGenre: [],
-    Db: [],
     loading: false,
 }
 
@@ -24,7 +22,6 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 allGame:action.payload,
-/*                 gameCopy:action.payload */
             }
         case GET_DETAIL:
             return{
@@ -82,30 +79,13 @@ function rootReducer(state = initialState, action){
             };
                 
         case CLEAN_FILTER:
-            console.log(state.gameCopy)
             return{
                 ...state,
                 allGame: state.gameCopy
             }
         case FILTER_DB: 
-/*             if (action.payload === "DB") {
-            const gameCreated = state.gameCopy.filter(game => {
-                console.log(game.created); // Agregar esta línea para depurar
-                return game.created === true;
-            });
-            return {
-                ...state,
-                allGame: gameCreated
-            };
-            } else {
-            return {
-                ...state,
-                allGame: state.gameCopy
-            }
-            } */
             if (action.payload === "DB") {
                 const gameCreated = state.gameCopy.filter(game => {
-                    /* console.log(game.created); // Agregar esta línea para depurar */
                     return game.created === true;
                 });
                 return {
@@ -114,7 +94,6 @@ function rootReducer(state = initialState, action){
                 };
             } else if(action.payload === "API"){
                 const gameCreated = state.gameCopy.filter(game => {
-                    /* console.log(game.created); // Agregar esta línea para depurar */
                     return game.created === false;
                 });
                 return {

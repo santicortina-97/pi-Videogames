@@ -31,7 +31,6 @@ export function getGames(){
 export function getByName(name){
     return async function(dispatch){
         let response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
-/*         console.log(response.data) */
         return dispatch({
             type:"GET_BY_NAME",
             payload:response.data
@@ -42,7 +41,6 @@ export function getByName(name){
 export function getDetail(id){
     return async function(dispatch){
         let response = await axios(`http://localhost:3001/videogames/${id}`)
-/*         console.log(response.data) */
         return dispatch({
             type:"GET_DETAIL",
             payload:response.data
@@ -115,10 +113,6 @@ export function getPlatforms(){
 
 
 export function filterGenre(genres){
-/*     return{
-        type: FILTER_GENRE,
-        payload: genres
-    } */
     return async function(dispatch){
         try {
             dispatch({
@@ -133,7 +127,6 @@ export function filterGenre(genres){
 
 /* FILTER_DB */
 export function filterDb(payload){
-    console.log(payload)
     return { 
         type: FILTER_DB, 
         payload 

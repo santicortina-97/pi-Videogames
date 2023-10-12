@@ -4,10 +4,12 @@ import style from "./Paginate.module.css"
 const Paginate = ({gamePerPage, allGame, paginado, currentPage}) => {
     const pageNumbers = []
 
+    //Recorrer las paginas
     for(let i=1; i <= Math.ceil(allGame/gamePerPage); i++){
         pageNumbers.push(i)
     }
 
+    //Cambiar de pagina
     const handleChangePage = (event) => {
         const selectedPage = parseInt(event.target.value, 10);
         paginado(selectedPage);
@@ -27,15 +29,6 @@ const Paginate = ({gamePerPage, allGame, paginado, currentPage}) => {
     
         return (
         <div className={style.container}>
-{/*             <ul className={style.containerUl}>
-                {pageNumbers && 
-                    pageNumbers.map(number =>(
-                        <li className={style.containerLi}>
-                            <button onClick={() => paginado(number)} className={style.button}>{number}</button>
-                        </li>
-                    ))
-                }
-            </ul> */}
             <button onClick={handleBackPage} disabled={currentPage === 1} className={style.button}>Back</button>
             <select name="" id="" onChange={handleChangePage} value={currentPage} className={style.select}>
             {pageNumbers && 

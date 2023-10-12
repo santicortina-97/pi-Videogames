@@ -24,8 +24,6 @@
     height: 100%;
     padding: 20px;
     border-radius: 20px;
-/*     background-color: #7109b737;
-    backdrop-filter: blur(10px); */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -60,7 +58,7 @@
 .name{
     text-align: center;
     margin-bottom: 20px;
-    font-size: 45px; /* O mas */
+    font-size: 45px;
     color: white;
     text-shadow: 3px 2px 0 #7A7A7A;
 }
@@ -80,27 +78,12 @@
     margin-bottom: 10px;
 }
 
-/* .platforms{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.genre{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 20px;
-} */
-
 
 .description{
     border: 2px solid #7209B7;
-/*     padding-right: 3vh;
-    padding-left: 3vh; */
     padding: 40px;
     text-align: justify;
     border-radius: 40px;
-/*     height: 76vh; */
     font-size: 20px;
     width: 600px;
     margin-top: 20px;
@@ -144,8 +127,41 @@
         flex-direction: column;
     }
 } 
+
 @media screen and (max-width: 730px){
     .containerDetail{
-        max-width: 600px;
+        max-width: 150%;
+    }
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+    .description{
+        border: none;
+        width: 100%;
+        padding: 0;
+        background: none;    
+    }
+} 
+
+@media screen and (max-width: 612px){
+    .name{
+        font-size: xx-large;
+    }
+    .genrePlatform{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .name{
+        font-size: xx-large;
+    }
+    .genrePlatform{
+        font-size: small;
+    }
+    .description{
+        font-size: medium;   
     }
 } 

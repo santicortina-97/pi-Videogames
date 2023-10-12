@@ -5,50 +5,48 @@ import { getGames, getByName, order, filterGenre, getGenres, cleanFilter, filter
 import React from 'react'
 import Cards from '../../components/Cards/Cards'
 import Navbar from "../../components/Navbar/Navbar"
-/* import Filter from "../../components/Filter/Filter" */
 import Paginate from "../../components/Paginate/Paginate"
 import style from "./Home.module.css"
 
 const HomePage = () => {
 
     const dispatch = useDispatch();
-    const allGame = useSelector((state) => state.allGame) //Estar suscripto al estado, cuando se modifique el estado tambien se modifica el componente
+    const allGame = useSelector((state) => state.allGame)
     const isLoading = useSelector((state) => state.loading)
     //!PAGINADO
     const [currentPage, setCurrentPage] = useState(1) //Pagina actual, arranca en 1
     const [gamePerPage, setGamePerPage] = useState(15) //juegos por pagina
     const indexLastGame = currentPage * gamePerPage //15
     const indexFirstGame = indexLastGame - gamePerPage //0
-    const currentGame = allGame.slice(indexFirstGame, indexLastGame)
+    const currentGame = allGame.slice(indexFirstGame, indexLastGame) // Extraemos los juegos
     
     const paginado = (pageNumber) =>{
         setCurrentPage(pageNumber)
     }
     //!FILTROS
-    const orden = useSelector((state) => state.allGame)
     const filtered = useSelector((state) => state.allGame)
     const genres = useSelector((state) => state.genres)
-    /* console.log(filtered) //! */
     const [aux, setAux] = useState(false)
 
+
+    //Filtro Base de datos
     function handleDbFilter(e) {
         dispatch(filterDb(e.target.value));
     }
 
-
-
+    //Filtro Orden
     function handleOrder(e){
         dispatch(order(e.target.value))
         setAux(true)
     }
-
+    //Filtro Genre
     function handleFilter(e) {
         dispatch(filterGenre(e.target.value));
     }
     
     
 
-
+    //Reset Filtro
     function clean(){
         dispatch(cleanFilter())
         setSearch("")
@@ -95,7 +93,7 @@ const HomePage = () => {
                     <>
                     <div className={style.filterContainer}>
                         <div className={style.buttons}>
-                            <select onChange={handleDbFilter} value="">
+                            <select onChange={handleDbFilter} defaultValue="">
                                 <option value="" disabled>Select</option>
                                 <option value="All">All</option>
                                 <option value="API">API</option>
@@ -107,7 +105,8 @@ const HomePage = () => {
                         <div className={style.rating}>
                             <h3 className={style.title}>Order Rating</h3>
                             <div style={{display:"flex", flexDirection:"column"}}>
-                                <select name="" id="" onChange={handleOrder}>
+                                <select name="" id="" onChange={handleOrder} defaultValue="">
+                                    <option value="" disabled>Order Rating</option>
                                     <option value="ascendentRating">Ascendent</option>
                                     <option value="descendentRating">Descendent</option>
                                 </select>
@@ -116,7 +115,8 @@ const HomePage = () => {
                         </div>
                         <div className={style.name}>
                             <h3 className={style.title}>Order Name</h3>
-                                <select name="" id="" onChange={handleOrder}>
+                                <select name="" id="" onChange={handleOrder} defaultValue="">
+                                    <option value="" disabled>Order Name</option>
                                     <option value="ascendentName">A-Z</option>
                                     <option value="descendentName">Z-A</option>
                                 </select>

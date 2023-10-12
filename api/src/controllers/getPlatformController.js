@@ -19,9 +19,6 @@ const getPlatformsController = async (req, res) =>{
                     }
                 });
             });
-/*             if(!response.data.next){
-                break
-            } */
             page++
         }
         res.status(200).json({platforms})
