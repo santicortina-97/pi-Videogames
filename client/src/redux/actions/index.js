@@ -30,11 +30,15 @@ export function getGames(){
 
 export function getByName(name){
     return async function(dispatch){
-        let response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
-        return dispatch({
-            type:"GET_BY_NAME",
-            payload:response.data
-        })
+        try {
+            let response = await axios(`http://localhost:3001/videogames/name?name=${name}`)
+            return dispatch({
+                type:"GET_BY_NAME",
+                payload:response.data
+            })
+        } catch (error) {
+            alert("No existe")
+        }
     }
 }
 

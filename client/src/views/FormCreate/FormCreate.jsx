@@ -66,11 +66,11 @@ const FormCreate = () => {
         const handleSubmit = (e) =>{
             e.preventDefault()
             if(!errors.name && !errors.image && !errors.platform && !errors.description && !errors.releaseDate && !errors.rating && !errors.genres){
-                alert("Creado con éxito")
-                navigate("/home")
                 dispatch(postGame(game))
+                alert("Successfully created")
+                navigate("/home")
             }else{
-                alert("Por favor, complete todos los campos")
+                alert("Please complete all fields")
             }
         }
 

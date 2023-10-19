@@ -42,7 +42,7 @@ const Detail = () => {
         <NavLink to={"/home"}><button className={style.back}>Back</button></NavLink>
       <div className={style.container}>
         {isLoading ? (
-          <div style={{color:"white"}}>Cargando...</div>
+          <div style={{color:"white", fontSize:"xx-large"}}>Loading...</div>
         ): ( 
           <>
             <div className={style.containerDetail} style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${detailgame.image})`, backgroundRepeat:"no-repeat", backgroundSize:"100% 100%", backdropFilter:"blur(10px)", backgroundAttachment:"fixed" }}>

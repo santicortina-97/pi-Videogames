@@ -39,27 +39,27 @@ function rootReducer(state = initialState, action){
                 ...state,
                 platforms: action.payload,
             }
-            case FILTER_GENRE:
-                if (action.payload === "All") {
-                return {
-                    ...state,
-                    allGame: state.gameCopy // Restaura la lista original de juegos sin filtrar
-                };
-                } else {
-                const filterGame = state.gameCopy.filter(game => {
-                    if (game.genres && Array.isArray(game.genres)) {
-                    const genreName = game.genres.map(genre => genre.name);
-                    return genreName.includes(action.payload);
-                    }
-                    return false; // Si no hay géneros o no es un array, no se incluye en el filtro
-                });
-                return {
-                    ...state,
-                    allGame: [...filterGame] // Sobrescribe allGame con los juegos filtrados
-                };
+        case FILTER_GENRE:
+            if (action.payload === "All") {
+            return {
+                ...state,
+                allGame: state.gameCopy // Restaura la lista original de juegos sin filtrar
+            };
+            } else {
+            const filterGame = state.gameCopy.filter(game => {
+                if (game.genres && Array.isArray(game.genres)) {
+                const genreName = game.genres.map(genre => genre.name);
+                return genreName.includes(action.payload);
                 }
-            
-            
+                return false; // Si no hay géneros o no es un array, no se incluye en el filtro
+            });
+            return {
+                ...state,
+                allGame: [...filterGame] // Sobrescribe allGame con los juegos filtrados
+            };
+            }
+        
+        
         case ORDER:
             let orderCopy = [...state.allGame];
             

@@ -88,7 +88,7 @@ const HomePage = () => {
             <Paginate   gamePerPage={gamePerPage} allGame={allGame.length} paginado={paginado} currentPage={currentPage}/>
             <div className={style.container}>
                 {isLoading ? (
-                    <div style={{color:"white"}}>Cargando...</div>
+                    <div style={{color:"white", fontSize:"xx-large"}}>Loading...</div>
                 ): (
                     <>
                     <div className={style.filterContainer}>
